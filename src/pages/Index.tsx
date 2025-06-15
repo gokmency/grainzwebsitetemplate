@@ -220,7 +220,7 @@ const Index = () => {
             textShadow: "0 2px 8px rgba(44,0,0,0.18)",
             fontFamily: "'Tomorrow', sans-serif"
           }}>
-            © 2025 GRAINZ LABS All rights reserved.
+            2026 GRAINZ
           </p>
         </div>
       </div>
