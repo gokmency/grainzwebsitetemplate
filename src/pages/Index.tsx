@@ -143,7 +143,7 @@ const Index = () => {
 
       {/* Mobile Layout */}
       <div className="block md:hidden">
-        <div className="px-4 pt-32 pb-8 space-y-8 z-10 relative min-h-screen">
+        <div className="px-4 pt-32 pb-20 space-y-6 z-10 relative min-h-screen">
           {/* Mobile Main Title */}
           <div className="text-center mb-8">
             <h1
@@ -159,32 +159,29 @@ const Index = () => {
           </div>
 
           {/* WHAT WE DO Section */}
-          <div className="bg-black/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+          <div className="bg-black/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
             <h2 
-              className="text-lg font-bold text-white mb-4 text-center"
+              className="text-lg font-bold text-white mb-3 text-center"
               style={{ letterSpacing: '2px', fontFamily: "'Tomorrow', sans-serif" }}
             >
               WHAT WE DO
             </h2>
-            <p className="text-white mb-6 leading-relaxed text-center text-sm" style={{ fontFamily: "'Tomorrow', sans-serif" }}>
+            <p className="text-white mb-4 leading-relaxed text-center text-sm" style={{ fontFamily: "'Tomorrow', sans-serif" }}>
               We design, develop, and build innovative solutions while nurturing and managing vibrant communities that drive meaningful engagement and growth.
             </p>
             <div className="flex justify-center">
-              <OutlineButton onClick={handleFollowUsClick}>
-                <div className="flex items-center justify-center text-sm font-medium" style={{ fontFamily: "'Tomorrow', sans-serif" }}>
-                  <span>FOLLOW US</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="ml-2">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                  </svg>
-                </div>
-              </OutlineButton>
+              <div className="w-auto">
+                <OutlineButton onClick={handleFollowUsClick}>
+                  <span className="text-xs">FOLLOW US</span>
+                </OutlineButton>
+              </div>
             </div>
           </div>
 
           {/* WHO WE ARE Section */}
-          <div className="bg-black/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+          <div className="bg-black/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
             <h2 
-              className="text-lg font-bold text-white mb-4 text-center"
+              className="text-lg font-bold text-white mb-3 text-center"
               style={{ letterSpacing: '2px', fontFamily: "'Tomorrow', sans-serif" }}
             >
               WHO WE ARE
@@ -195,18 +192,34 @@ const Index = () => {
           </div>
 
           {/* WORK WITH US Section */}
-          <div className="bg-black/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+          <div className="bg-black/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
             <h2 
-              className="text-lg font-bold text-white mb-4 text-center"
+              className="text-lg font-bold text-white mb-3 text-center"
               style={{ letterSpacing: '2px', fontFamily: "'Tomorrow', sans-serif" }}
             >
               WORK WITH US
             </h2>
-            <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto">
-              <OutlineButton onClick={handleDesignClick}>Design</OutlineButton>
-              <OutlineButton onClick={handleDevelopmentClick}>Development</OutlineButton>
-              <OutlineButton onClick={handleCommunityClick}>Community</OutlineButton>
-              <OutlineButton onClick={handleJoinTeamClick}>Join our team</OutlineButton>
+            <div className="grid grid-cols-2 gap-2 max-w-xs mx-auto">
+              <div className="w-full">
+                <OutlineButton onClick={handleDesignClick} className="w-full">
+                  <span className="block text-xs">Design</span>
+                </OutlineButton>
+              </div>
+              <div className="w-full">
+                <OutlineButton onClick={handleDevelopmentClick} className="w-full">
+                  <span className="block text-xs">Development</span>
+                </OutlineButton>
+              </div>
+              <div className="w-full">
+                <OutlineButton onClick={handleCommunityClick} className="w-full">
+                  <span className="block text-xs">Community</span>
+                </OutlineButton>
+              </div>
+              <div className="w-full">
+                <OutlineButton onClick={handleJoinTeamClick} className="w-full">
+                  <span className="block text-xs">Join our team</span>
+                </OutlineButton>
+              </div>
             </div>
           </div>
         </div>
