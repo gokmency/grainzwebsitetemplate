@@ -37,9 +37,14 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#C8102E] to-[#E53E3E] relative md:overflow-hidden flex flex-col" style={{ fontFamily: "'Tomorrow', sans-serif" }}>
-      {/* Waves Animation Background */}
-      <div className="absolute inset-0">
+    <div 
+      className="bg-gradient-to-br from-[#C8102E] to-[#E53E3E] relative 
+                 md:min-h-screen md:overflow-hidden md:flex md:flex-col 
+                 min-h-screen overflow-x-hidden overflow-y-auto" 
+      style={{ fontFamily: "'Tomorrow', sans-serif" }}
+    >
+      {/* Waves Animation Background - Desktop Only */}
+      <div className="hidden md:block absolute inset-0">
         <Waves
           lineColor="rgba(255, 255, 255, 0.2)"
           backgroundColor="transparent"
@@ -143,7 +148,7 @@ const Index = () => {
 
       {/* Mobile Layout */}
       <div className="block md:hidden">
-        <div className="px-4 pt-32 pb-8 space-y-6 z-10 relative flex-1">
+        <div className="px-4 pt-32 pb-8 space-y-6 z-10 relative">
           {/* Mobile Main Title */}
           <div className="text-center mb-8">
             <h1
@@ -226,7 +231,7 @@ const Index = () => {
       </div>
 
       {/* Copyright notice */}
-      <div className="mt-auto py-4 z-50 pointer-events-none select-none">
+      <div className="py-4 z-50 pointer-events-none select-none md:mt-auto">
         <p className="text-center text-xs text-white/70 tracking-wide px-4" style={{
           textShadow: "0 2px 8px rgba(44,0,0,0.18)",
           fontFamily: "'Tomorrow', sans-serif"
