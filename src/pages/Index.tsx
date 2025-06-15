@@ -36,6 +36,10 @@ const Index = () => {
     window.open('https://form.typeform.com/to/wWliUJsu', '_blank');
   };
 
+  const handleGrainzClick = () => {
+    window.open('https://x.com/grainzeth', '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#C8102E] to-[#E53E3E] relative overflow-hidden flex flex-col" style={{ fontFamily: "'Tomorrow', sans-serif" }}>
       {/* Waves Animation Background */}
@@ -139,6 +143,23 @@ const Index = () => {
           </h2>
           <TeamPhotos />
         </div>
+
+        {/* Copyright notice - Desktop */}
+        <div className="absolute bottom-2 left-0 w-full z-50 pointer-events-auto">
+          <p className="text-center text-xs text-white/70 tracking-wide px-4" style={{
+            textShadow: "0 2px 8px rgba(44,0,0,0.18)",
+            fontFamily: "'Tomorrow', sans-serif"
+          }}>
+            © 2026{' '}
+            <button 
+              onClick={handleGrainzClick}
+              className="underline hover:text-white transition-colors cursor-pointer"
+            >
+              GRAINZ
+            </button>
+            {' '}All rights reserved.
+          </p>
+        </div>
       </div>
 
       {/* Mobile Layout - Fit to Screen */}
@@ -215,12 +236,19 @@ const Index = () => {
         </div>
 
         {/* Copyright notice - Mobile */}
-        <div className="py-2 z-50 pointer-events-none select-none">
+        <div className="py-2 z-50 pointer-events-auto">
           <p className="text-center text-xs text-white/70 tracking-wide px-4" style={{
             textShadow: "0 2px 8px rgba(44,0,0,0.18)",
             fontFamily: "'Tomorrow', sans-serif"
           }}>
-            2026 GRAINZ
+            © 2026{' '}
+            <button 
+              onClick={handleGrainzClick}
+              className="underline hover:text-white transition-colors cursor-pointer"
+            >
+              GRAINZ
+            </button>
+            {' '}All rights reserved.
           </p>
         </div>
       </div>
