@@ -37,43 +37,41 @@ const Index = () => {
   };
 
   return (
-    <div 
-      className="bg-gradient-to-br from-[#C8102E] to-[#E53E3E] relative 
-                 md:min-h-screen md:overflow-hidden md:flex md:flex-col 
-                 min-h-screen overflow-x-hidden overflow-y-auto" 
-      style={{ fontFamily: "'Tomorrow', sans-serif" }}
-    >
-      {/* Waves Animation Background - Desktop Only */}
-      <div className="hidden md:block absolute inset-0">
-        <Waves
-          lineColor="rgba(255, 255, 255, 0.2)"
-          backgroundColor="transparent"
-          waveSpeedX={0.015}
-          waveSpeedY={0.008}
-          waveAmpX={35}
-          waveAmpY={18}
-          friction={0.92}
-          tension={0.008}
-          maxCursorMove={110}
-          xGap={12}
-          yGap={34}
-        />
-      </div>
-
-      {/* Header - Logo (responsive) */}
-      <header className="absolute top-4 left-4 md:top-8 md:left-16 z-10">
-        <div className="flex items-center">
-          <img 
-            src="/lovable-uploads/9d283f80-ab01-419a-9b24-13fd7abda243.png" 
-            alt="GRAINZ LABS Logo" 
-            className="w-24 h-24 md:w-48 md:h-48 drop-shadow-lg select-none"
-            draggable={false}
+    <>
+      {/* Desktop Layout */}
+      <div 
+        className="hidden md:block min-h-screen bg-gradient-to-br from-[#C8102E] to-[#E53E3E] relative overflow-hidden flex flex-col" 
+        style={{ fontFamily: "'Tomorrow', sans-serif" }}
+      >
+        {/* Waves Animation Background - Desktop Only */}
+        <div className="absolute inset-0">
+          <Waves
+            lineColor="rgba(255, 255, 255, 0.2)"
+            backgroundColor="transparent"
+            waveSpeedX={0.015}
+            waveSpeedY={0.008}
+            waveAmpX={35}
+            waveAmpY={18}
+            friction={0.92}
+            tension={0.008}
+            maxCursorMove={110}
+            xGap={12}
+            yGap={34}
           />
         </div>
-      </header>
 
-      {/* Desktop Layout */}
-      <div className="hidden md:block">
+        {/* Header - Logo (desktop) */}
+        <header className="absolute top-8 left-16 z-10">
+          <div className="flex items-center">
+            <img 
+              src="/lovable-uploads/9d283f80-ab01-419a-9b24-13fd7abda243.png" 
+              alt="GRAINZ LABS Logo" 
+              className="w-48 h-48 drop-shadow-lg select-none"
+              draggable={false}
+            />
+          </div>
+        </header>
+
         {/* Central Hexagon */}
         <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none select-none">
           <div 
@@ -144,11 +142,37 @@ const Index = () => {
           </h2>
           <TeamPhotos />
         </div>
+
+        {/* Copyright notice - Desktop */}
+        <div className="mt-auto py-4 z-50 pointer-events-none select-none">
+          <p className="text-center text-xs text-white/70 tracking-wide px-4" style={{
+            textShadow: "0 2px 8px rgba(44,0,0,0.18)",
+            fontFamily: "'Tomorrow', sans-serif"
+          }}>
+            © 2025 GRAINZ LABS All rights reserved.
+          </p>
+        </div>
       </div>
 
-      {/* Mobile Layout */}
-      <div className="block md:hidden">
-        <div className="px-4 pt-32 pb-8 space-y-6 z-10 relative">
+      {/* Mobile Layout - Completely Separate */}
+      <div 
+        className="block md:hidden bg-gradient-to-br from-[#C8102E] to-[#E53E3E]" 
+        style={{ fontFamily: "'Tomorrow', sans-serif" }}
+      >
+        {/* Header - Logo (mobile) */}
+        <header className="pt-4 pl-4 pb-8">
+          <div className="flex items-center">
+            <img 
+              src="/lovable-uploads/9d283f80-ab01-419a-9b24-13fd7abda243.png" 
+              alt="GRAINZ LABS Logo" 
+              className="w-24 h-24 drop-shadow-lg select-none"
+              draggable={false}
+            />
+          </div>
+        </header>
+
+        {/* Mobile Content */}
+        <div className="px-4 pb-8 space-y-6">
           {/* Mobile Main Title */}
           <div className="text-center mb-8">
             <h1
@@ -227,19 +251,19 @@ const Index = () => {
               </div>
             </div>
           </div>
+
+          {/* Copyright notice - Mobile */}
+          <div className="py-4 pointer-events-none select-none">
+            <p className="text-center text-xs text-white/70 tracking-wide px-4" style={{
+              textShadow: "0 2px 8px rgba(44,0,0,0.18)",
+              fontFamily: "'Tomorrow', sans-serif"
+            }}>
+              © 2025 GRAINZ LABS All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
-
-      {/* Copyright notice */}
-      <div className="py-4 z-50 pointer-events-none select-none md:mt-auto">
-        <p className="text-center text-xs text-white/70 tracking-wide px-4" style={{
-          textShadow: "0 2px 8px rgba(44,0,0,0.18)",
-          fontFamily: "'Tomorrow', sans-serif"
-        }}>
-          © 2025 GRAINZ LABS All rights reserved.
-        </p>
-      </div>
-    </div>
+    </>
   );
 };
 
