@@ -126,8 +126,8 @@ const TeamPhotos: React.FC = () => {
 
   return (
     <div className="relative">
-      {/* Team Grid Layout - Smaller images */}
-      <div className="grid grid-cols-2 gap-2 max-w-[180px]">
+      {/* Desktop Grid Layout */}
+      <div className="hidden md:grid grid-cols-2 gap-2 max-w-[180px]">
         {/* Left Column - 4 members */}
         <div className="space-y-2">
           {leftColumnMembers.map((member) => {
@@ -197,6 +197,44 @@ const TeamPhotos: React.FC = () => {
         </div>
       </div>
 
+      {/* Mobile Grid Layout */}
+      <div className="grid md:hidden grid-cols-4 gap-1 max-w-[200px] mx-auto">
+        {teamMembers.map((member) => {
+          const isHovered = member.id === hoveredMember;
+          
+          return (
+            <div
+              key={member.id}
+              onMouseEnter={(e) => handleMouseEnter(member.id, e)}
+              onMouseLeave={handleMouseLeave}
+              onClick={(e) => handleMouseEnter(member.id, e)}
+              className={`group rounded-lg overflow-hidden relative border-2 transition-all duration-200 flex-shrink-0 bg-white w-full aspect-square cursor-pointer
+                ${isHovered ? "border-[#C8102E] shadow-lg scale-105 z-10" : "border-transparent hover:border-[#9D174D]"} 
+              `}
+              aria-label={member.name}
+            >
+              <img
+                src={member.color}
+                alt={member.name}
+                className={`w-full h-full object-cover transition-all duration-200 ${
+                  isHovered ? "grayscale-0" : "grayscale hover:grayscale-0"
+                }`}
+                style={{
+                  objectPosition: 'center 25%'
+                }}
+                draggable={false}
+              />
+              {isHovered && (
+                <span
+                  className="absolute inset-0 border-[3px] border-[#FBBF24] pointer-events-none rounded-lg"
+                  aria-hidden
+                />
+              )}
+            </div>
+          );
+        })}
+      </div>
+
       {/* Simplified Popup - No image inside, clean design */}
       {hoveredMember && (
         <div 
@@ -209,7 +247,7 @@ const TeamPhotos: React.FC = () => {
           <div
             onMouseEnter={handlePopupMouseEnter}
             onMouseLeave={handlePopupMouseLeave}
-            className="relative bg-white rounded-lg shadow-2xl w-80 p-6 transform transition-all duration-300 scale-100 border-2 border-gray-200"
+            className="relative bg-white rounded-lg shadow-2xl w-80 max-w-[90vw] p-4 md:p-6 transform transition-all duration-300 scale-100 border-2 border-gray-200"
             style={{
               fontFamily: "'Tomorrow', sans-serif"
             }}

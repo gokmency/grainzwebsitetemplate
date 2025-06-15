@@ -55,104 +55,34 @@ const Index = () => {
         />
       </div>
 
-      {/* Header - Enlarged logo */}
-      <header className="absolute top-8 left-16 z-10">
+      {/* Header - Logo (responsive) */}
+      <header className="absolute top-4 left-4 md:top-8 md:left-16 z-10">
         <div className="flex items-center">
           <img 
             src="/lovable-uploads/9d283f80-ab01-419a-9b24-13fd7abda243.png" 
             alt="GRAINZ LABS Logo" 
-            className="w-40 h-40 md:w-48 md:h-48 drop-shadow-lg select-none"
+            className="w-24 h-24 md:w-48 md:h-48 drop-shadow-lg select-none"
             draggable={false}
           />
         </div>
       </header>
 
-      {/* Central Hexagon */}
-      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none select-none">
-        <div 
-          className="relative w-[600px] h-[600px] max-w-[400px] max-h-[400px] md:max-w-[600px] md:max-h-[600px]"
-          style={{
-            background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)',
-            clipPath: 'polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)'
-          }}
-        >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <h1
-              className="text-3xl md:text-5xl font-black text-white text-center"
-              style={{
-                letterSpacing: '8px',
-                fontFamily: "'Tomorrow', sans-serif"
-              }}
-            >
-              WE BUILD THINGS
-            </h1>
-          </div>
-        </div>
-      </div>
-
-      {/* Top-Left Section - WHAT WE DO - Moved further from edges */}
-      <div className="absolute top-52 left-20 max-w-sm z-10">
-        <h2 
-          className="text-lg font-bold text-white mb-4"
-          style={{ letterSpacing: '2px', fontFamily: "'Tomorrow', sans-serif" }}
-        >
-          WHAT WE DO
-        </h2>
-        <p className="text-white mb-6 leading-relaxed" style={{ fontFamily: "'Tomorrow', sans-serif" }}>
-          We design, develop, and build innovative solutions while nurturing and managing vibrant communities that drive meaningful engagement and growth.
-        </p>
-        <OutlineButton onClick={handleFollowUsClick}>
-          <div className="flex items-center justify-between w-full text-sm font-medium" style={{ fontFamily: "'Tomorrow', sans-serif" }}>
-            <span>FOLLOW US</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="ml-2">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-          </div>
-        </OutlineButton>
-      </div>
-
-      {/* Bottom-Left Section - WORK WITH US - Moved further from edges */}
-      <div className="absolute bottom-20 left-20 max-w-sm z-10">
-        <h2 
-          className="text-lg font-bold text-white mb-4"
-          style={{ letterSpacing: '2px', fontFamily: "'Tomorrow', sans-serif" }}
-        >
-          WORK WITH US
-        </h2>
-        <div className="grid grid-cols-2 gap-3">
-          <OutlineButton onClick={handleDesignClick}>Design</OutlineButton>
-          <OutlineButton onClick={handleDevelopmentClick}>Development</OutlineButton>
-          <OutlineButton onClick={handleCommunityClick}>Community</OutlineButton>
-          <OutlineButton onClick={handleJoinTeamClick}>Join our team</OutlineButton>
-        </div>
-      </div>
-
-      {/* Top-Right Section - WHO WE ARE - Moved more to the left */}
-      <div className="absolute top-44 right-32 max-w-sm z-10">
-        <h2 
-          className="text-lg font-bold text-white mb-4"
-          style={{ letterSpacing: '2px', fontFamily: "'Tomorrow', sans-serif" }}
-        >
-          WHO WE ARE
-        </h2>
-        <TeamPhotos />
-      </div>
-
-      {/* Mobile Layout */}
-      <div className="block md:hidden px-6 pt-32 pb-12 space-y-12 z-10 relative">
-        <div className="text-center">
+      {/* Desktop Layout */}
+      <div className="hidden md:block">
+        {/* Central Hexagon */}
+        <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none select-none">
           <div 
-            className="mx-auto w-80 h-80 mb-8"
+            className="relative w-[600px] h-[600px]"
             style={{
               background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)',
               clipPath: 'polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)'
             }}
           >
-            <div className="h-full flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center">
               <h1
-                className="text-2xl font-black text-white text-center"
+                className="text-5xl font-black text-white text-center"
                 style={{
-                  letterSpacing: '4px',
+                  letterSpacing: '8px',
                   fontFamily: "'Tomorrow', sans-serif"
                 }}
               >
@@ -162,7 +92,8 @@ const Index = () => {
           </div>
         </div>
 
-        <div>
+        {/* Top-Left Section - WHAT WE DO */}
+        <div className="absolute top-52 left-20 max-w-sm z-10">
           <h2 
             className="text-lg font-bold text-white mb-4"
             style={{ letterSpacing: '2px', fontFamily: "'Tomorrow', sans-serif" }}
@@ -182,7 +113,24 @@ const Index = () => {
           </OutlineButton>
         </div>
 
-        <div>
+        {/* Bottom-Left Section - WORK WITH US */}
+        <div className="absolute bottom-20 left-20 max-w-sm z-10">
+          <h2 
+            className="text-lg font-bold text-white mb-4"
+            style={{ letterSpacing: '2px', fontFamily: "'Tomorrow', sans-serif" }}
+          >
+            WORK WITH US
+          </h2>
+          <div className="grid grid-cols-2 gap-3">
+            <OutlineButton onClick={handleDesignClick}>Design</OutlineButton>
+            <OutlineButton onClick={handleDevelopmentClick}>Development</OutlineButton>
+            <OutlineButton onClick={handleCommunityClick}>Community</OutlineButton>
+            <OutlineButton onClick={handleJoinTeamClick}>Join our team</OutlineButton>
+          </div>
+        </div>
+
+        {/* Top-Right Section - WHO WE ARE */}
+        <div className="absolute top-44 right-32 max-w-sm z-10">
           <h2 
             className="text-lg font-bold text-white mb-4"
             style={{ letterSpacing: '2px', fontFamily: "'Tomorrow', sans-serif" }}
@@ -191,26 +139,82 @@ const Index = () => {
           </h2>
           <TeamPhotos />
         </div>
+      </div>
 
-        <div>
-          <h2 
-            className="text-lg font-bold text-white mb-4"
-            style={{ letterSpacing: '2px', fontFamily: "'Tomorrow', sans-serif" }}
-          >
-            WORK WITH US
-          </h2>
-          <div className="grid grid-cols-1 gap-3">
-            <OutlineButton onClick={handleDesignClick}>Design</OutlineButton>
-            <OutlineButton onClick={handleDevelopmentClick}>Development</OutlineButton>
-            <OutlineButton onClick={handleCommunityClick}>Community</OutlineButton>
-            <OutlineButton onClick={handleJoinTeamClick}>Join our team</OutlineButton>
+      {/* Mobile Layout */}
+      <div className="block md:hidden">
+        <div className="px-4 pt-32 pb-8 space-y-8 z-10 relative min-h-screen">
+          {/* Mobile Main Title */}
+          <div className="text-center mb-8">
+            <h1
+              className="text-2xl sm:text-3xl font-black text-white text-center px-4"
+              style={{
+                letterSpacing: '4px',
+                fontFamily: "'Tomorrow', sans-serif",
+                lineHeight: '1.2'
+              }}
+            >
+              WE BUILD THINGS
+            </h1>
+          </div>
+
+          {/* WHAT WE DO Section */}
+          <div className="bg-black/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+            <h2 
+              className="text-lg font-bold text-white mb-4 text-center"
+              style={{ letterSpacing: '2px', fontFamily: "'Tomorrow', sans-serif" }}
+            >
+              WHAT WE DO
+            </h2>
+            <p className="text-white mb-6 leading-relaxed text-center text-sm" style={{ fontFamily: "'Tomorrow', sans-serif" }}>
+              We design, develop, and build innovative solutions while nurturing and managing vibrant communities that drive meaningful engagement and growth.
+            </p>
+            <div className="flex justify-center">
+              <OutlineButton onClick={handleFollowUsClick}>
+                <div className="flex items-center justify-center text-sm font-medium" style={{ fontFamily: "'Tomorrow', sans-serif" }}>
+                  <span>FOLLOW US</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="ml-2">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </div>
+              </OutlineButton>
+            </div>
+          </div>
+
+          {/* WHO WE ARE Section */}
+          <div className="bg-black/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+            <h2 
+              className="text-lg font-bold text-white mb-4 text-center"
+              style={{ letterSpacing: '2px', fontFamily: "'Tomorrow', sans-serif" }}
+            >
+              WHO WE ARE
+            </h2>
+            <div className="flex justify-center">
+              <TeamPhotos />
+            </div>
+          </div>
+
+          {/* WORK WITH US Section */}
+          <div className="bg-black/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+            <h2 
+              className="text-lg font-bold text-white mb-4 text-center"
+              style={{ letterSpacing: '2px', fontFamily: "'Tomorrow', sans-serif" }}
+            >
+              WORK WITH US
+            </h2>
+            <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto">
+              <OutlineButton onClick={handleDesignClick}>Design</OutlineButton>
+              <OutlineButton onClick={handleDevelopmentClick}>Development</OutlineButton>
+              <OutlineButton onClick={handleCommunityClick}>Community</OutlineButton>
+              <OutlineButton onClick={handleJoinTeamClick}>Join our team</OutlineButton>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Copyright notice: sticky bottom, centered, always visible */}
+      {/* Copyright notice */}
       <div className="absolute bottom-2 left-0 w-full z-50 pointer-events-none select-none">
-        <p className="text-center text-xs text-white/70 tracking-wide" style={{
+        <p className="text-center text-xs text-white/70 tracking-wide px-4" style={{
           textShadow: "0 2px 8px rgba(44,0,0,0.18)",
           fontFamily: "'Tomorrow', sans-serif"
         }}>
