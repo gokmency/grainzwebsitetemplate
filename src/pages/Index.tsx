@@ -84,7 +84,7 @@ const Index = () => {
                 fontFamily: "'Tomorrow', sans-serif"
               }}
             >
-              WE MAKE IMPACT
+              WE BUILD THINGS
             </h1>
           </div>
         </div>
@@ -156,7 +156,7 @@ const Index = () => {
                   fontFamily: "'Tomorrow', sans-serif"
                 }}
               >
-                WE MAKE IMPACT
+                WE BUILD THINGS
               </h1>
             </div>
           </div>
