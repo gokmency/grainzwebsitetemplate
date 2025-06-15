@@ -100,14 +100,4 @@
   body {
     @apply bg-background text-foreground;
   }
-
-  /* Mobile scroll fix */
-  @media (max-width: 768px) {
-    html, body {
-      overflow-x: hidden;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-      height: auto;
-    }
-  }
 }
