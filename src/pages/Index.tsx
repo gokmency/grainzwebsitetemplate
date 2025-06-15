@@ -37,7 +37,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#C8102E] to-[#E53E3E] relative overflow-hidden flex flex-col" style={{ fontFamily: "'Tomorrow', sans-serif" }}>
+    <div className="min-h-screen bg-gradient-to-br from-[#C8102E] to-[#E53E3E] relative md:overflow-hidden flex flex-col" style={{ fontFamily: "'Tomorrow', sans-serif" }}>
       {/* Waves Animation Background */}
       <div className="absolute inset-0">
         <Waves
@@ -143,7 +143,7 @@ const Index = () => {
 
       {/* Mobile Layout */}
       <div className="block md:hidden">
-        <div className="px-4 pt-32 pb-20 space-y-6 z-10 relative min-h-screen">
+        <div className="px-4 pt-32 pb-8 space-y-6 z-10 relative flex-1">
           {/* Mobile Main Title */}
           <div className="text-center mb-8">
             <h1
@@ -226,7 +226,7 @@ const Index = () => {
       </div>
 
       {/* Copyright notice */}
-      <div className="absolute bottom-2 left-0 w-full z-50 pointer-events-none select-none">
+      <div className="mt-auto py-4 z-50 pointer-events-none select-none">
         <p className="text-center text-xs text-white/70 tracking-wide px-4" style={{
           textShadow: "0 2px 8px rgba(44,0,0,0.18)",
           fontFamily: "'Tomorrow', sans-serif"
