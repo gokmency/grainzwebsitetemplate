@@ -154,113 +154,75 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Mobile Layout - Completely Separate */}
-      <div 
-        className="block md:hidden bg-gradient-to-br from-[#C8102E] to-[#E53E3E]" 
-        style={{ fontFamily: "'Tomorrow', sans-serif" }}
-      >
-        {/* Header - Logo (mobile) */}
-        <header className="pt-4 pl-4 pb-8">
-          <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/9d283f80-ab01-419a-9b24-13fd7abda243.png" 
-              alt="GRAINZ LABS Logo" 
-              className="w-24 h-24 drop-shadow-lg select-none"
-              draggable={false}
-            />
-          </div>
-        </header>
+      {/* Mobile Layout - Ultra Simplified */}
+      <div className="md:hidden bg-gradient-to-br from-[#C8102E] to-[#E53E3E] w-full">
+        {/* Logo */}
+        <div className="p-4">
+          <img 
+            src="/lovable-uploads/9d283f80-ab01-419a-9b24-13fd7abda243.png" 
+            alt="GRAINZ LABS Logo" 
+            className="w-20 h-20"
+          />
+        </div>
 
-        {/* Mobile Content */}
-        <div className="px-4 pb-8 space-y-6">
-          {/* Mobile Main Title */}
-          <div className="text-center mb-8">
-            <h1
-              className="text-2xl sm:text-3xl font-black text-white text-center px-4"
-              style={{
-                letterSpacing: '4px',
-                fontFamily: "'Tomorrow', sans-serif",
-                lineHeight: '1.2'
-              }}
-            >
-              WE BUILD THINGS
-            </h1>
-          </div>
+        {/* Main Title */}
+        <div className="px-4 py-8 text-center">
+          <h1 className="text-2xl font-black text-white" style={{ fontFamily: "'Tomorrow', sans-serif", letterSpacing: '3px' }}>
+            WE BUILD THINGS
+          </h1>
+        </div>
 
-          {/* WHAT WE DO Section */}
-          <div className="bg-black/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-            <h2 
-              className="text-lg font-bold text-white mb-3 text-center"
-              style={{ letterSpacing: '2px', fontFamily: "'Tomorrow', sans-serif" }}
-            >
-              WHAT WE DO
-            </h2>
-            <p className="text-white mb-4 leading-relaxed text-center text-sm" style={{ fontFamily: "'Tomorrow', sans-serif" }}>
-              We design, develop, and build innovative solutions while nurturing and managing vibrant communities that drive meaningful engagement and growth.
-            </p>
-            <div className="flex justify-center">
-              <div className="w-auto">
-                <OutlineButton onClick={handleFollowUsClick}>
-                  <span className="text-xs">FOLLOW US</span>
-                </OutlineButton>
-              </div>
-            </div>
+        {/* WHAT WE DO */}
+        <div className="mx-4 mb-6 bg-black/20 rounded-lg p-4">
+          <h2 className="text-lg font-bold text-white mb-3 text-center" style={{ fontFamily: "'Tomorrow', sans-serif" }}>
+            WHAT WE DO
+          </h2>
+          <p className="text-white text-sm text-center mb-4" style={{ fontFamily: "'Tomorrow', sans-serif" }}>
+            We design, develop, and build innovative solutions while nurturing and managing vibrant communities.
+          </p>
+          <div className="text-center">
+            <OutlineButton onClick={handleFollowUsClick}>
+              <span className="text-xs">FOLLOW US</span>
+            </OutlineButton>
           </div>
+        </div>
 
-          {/* WHO WE ARE Section */}
-          <div className="bg-black/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-            <h2 
-              className="text-lg font-bold text-white mb-3 text-center"
-              style={{ letterSpacing: '2px', fontFamily: "'Tomorrow', sans-serif" }}
-            >
-              WHO WE ARE
-            </h2>
-            <div className="flex justify-center">
-              <TeamPhotos />
-            </div>
+        {/* WHO WE ARE */}
+        <div className="mx-4 mb-6 bg-black/20 rounded-lg p-4">
+          <h2 className="text-lg font-bold text-white mb-3 text-center" style={{ fontFamily: "'Tomorrow', sans-serif" }}>
+            WHO WE ARE
+          </h2>
+          <div className="flex justify-center">
+            <TeamPhotos />
           </div>
+        </div>
 
-          {/* WORK WITH US Section */}
-          <div className="bg-black/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-            <h2 
-              className="text-lg font-bold text-white mb-3 text-center"
-              style={{ letterSpacing: '2px', fontFamily: "'Tomorrow', sans-serif" }}
-            >
-              WORK WITH US
-            </h2>
-            <div className="grid grid-cols-2 gap-2 max-w-xs mx-auto">
-              <div className="w-full">
-                <OutlineButton onClick={handleDesignClick} className="w-full">
-                  <span className="block text-xs">Design</span>
-                </OutlineButton>
-              </div>
-              <div className="w-full">
-                <OutlineButton onClick={handleDevelopmentClick} className="w-full">
-                  <span className="block text-xs">Development</span>
-                </OutlineButton>
-              </div>
-              <div className="w-full">
-                <OutlineButton onClick={handleCommunityClick} className="w-full">
-                  <span className="block text-xs">Community</span>
-                </OutlineButton>
-              </div>
-              <div className="w-full">
-                <OutlineButton onClick={handleJoinTeamClick} className="w-full">
-                  <span className="block text-xs">Join our team</span>
-                </OutlineButton>
-              </div>
-            </div>
+        {/* WORK WITH US */}
+        <div className="mx-4 mb-6 bg-black/20 rounded-lg p-4">
+          <h2 className="text-lg font-bold text-white mb-3 text-center" style={{ fontFamily: "'Tomorrow', sans-serif" }}>
+            WORK WITH US
+          </h2>
+          <div className="grid grid-cols-2 gap-3 max-w-xs mx-auto">
+            <OutlineButton onClick={handleDesignClick}>
+              <span className="text-xs">Design</span>
+            </OutlineButton>
+            <OutlineButton onClick={handleDevelopmentClick}>
+              <span className="text-xs">Development</span>
+            </OutlineButton>
+            <OutlineButton onClick={handleCommunityClick}>
+              <span className="text-xs">Community</span>
+            </OutlineButton>
+            <OutlineButton onClick={handleJoinTeamClick}>
+              <span className="text-xs">Join Team</span>
+            </OutlineButton>
           </div>
+        </div>
 
-          {/* Copyright notice - Mobile */}
-          <div className="py-4 pointer-events-none select-none">
-            <p className="text-center text-xs text-white/70 tracking-wide px-4" style={{
-              textShadow: "0 2px 8px rgba(44,0,0,0.18)",
-              fontFamily: "'Tomorrow', sans-serif"
-            }}>
-              © 2025 GRAINZ LABS All rights reserved.
-            </p>
-          </div>
+        {/* Copyright */}
+        <div className="p-4 text-center">
+          <p className="text-xs text-white/70" style={{ fontFamily: "'Tomorrow', sans-serif" }}>
+            © 2025 GRAINZ LABS All rights reserved.
+          </p>
         </div>
       </div>
     </>
