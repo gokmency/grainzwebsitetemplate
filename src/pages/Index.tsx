@@ -29,7 +29,7 @@ const Index = () => {
   };
 
   const handleCommunityClick = () => {
-    window.open('https://x.com/grainzeth', '_blank');
+    window.open('https://grainzlegacy0.vercel.app/', '_blank');
   };
 
   const handleJoinTeamClick = () => {
