@@ -1,0 +1,26 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/design",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/development", 
+      "dest": "/index.html"
+    },
+    {
+      "src": "/community",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
