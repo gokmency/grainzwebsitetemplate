@@ -2,6 +2,7 @@ import React from 'react';
 import TeamPhotos from '../components/TeamPhotos';
 import OutlineButton from '../components/OutlineButton';
 import { Waves } from '../components/ui/waves-background';
+import { WorksWith } from '../components/WorksWith';
 
 // Tomorrow font import from Google Fonts
 if (typeof window !== "undefined") {
@@ -21,15 +22,15 @@ const Index = () => {
   };
 
   const handleDesignClick = () => {
-    window.open('https://x.com/100guc', '_blank');
+    window.location.href = '/design';
   };
 
   const handleDevelopmentClick = () => {
-    window.open('https://x.com/gokmeneth', '_blank');
+    window.location.href = '/development';
   };
 
   const handleCommunityClick = () => {
-    window.open('https://x.com/grainzeth', '_blank');
+    window.location.href = '/community';
   };
 
   const handleJoinTeamClick = () => {
@@ -63,9 +64,9 @@ const Index = () => {
       <header className="absolute top-4 left-4 md:top-8 md:left-16 z-10">
         <div className="flex items-center">
           <img 
-            src="/lovable-uploads/9d283f80-ab01-419a-9b24-13fd7abda243.png" 
+            src="/grainz-logo.png" 
             alt="GRAINZ LABS Logo" 
-            className="w-24 h-24 md:w-48 md:h-48 drop-shadow-lg select-none"
+            className="h-12 w-auto md:h-20 drop-shadow-lg select-none object-contain"
             draggable={false}
           />
         </div>
@@ -133,8 +134,8 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Top-Right Section - WHO WE ARE */}
-        <div className="absolute top-44 right-32 max-w-sm z-10">
+        {/* Right Section - WHO WE ARE & WORKED WITH */}
+        <div className="absolute top-44 right-20 max-w-sm z-10">
           <h2 
             className="text-lg font-bold text-white mb-4"
             style={{ letterSpacing: '2px', fontFamily: "'Tomorrow', sans-serif" }}
@@ -142,6 +143,11 @@ const Index = () => {
             WHO WE ARE
           </h2>
           <TeamPhotos />
+          
+          {/* WORKED WITH - Below team photos */}
+          <div className="mt-8">
+            <WorksWith />
+          </div>
         </div>
 
         {/* Copyright notice - Desktop */}
@@ -221,7 +227,7 @@ const Index = () => {
             </div>
           </div>
 
-          {/* WHO WE ARE Section - Moved to Bottom */}
+          {/* WHO WE ARE & WORKED WITH Section - Mobile */}
           <div className="bg-black/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
             <h2 
               className="text-sm font-bold text-white mb-2 text-center"
@@ -229,8 +235,13 @@ const Index = () => {
             >
               WHO WE ARE
             </h2>
-            <div className="flex justify-center">
+            <div className="flex justify-center mb-4">
               <TeamPhotos />
+            </div>
+            
+            {/* WORKED WITH - Below team photos */}
+            <div className="mt-4">
+              <WorksWith />
             </div>
           </div>
         </div>

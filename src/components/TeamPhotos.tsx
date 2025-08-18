@@ -1,70 +1,66 @@
 
 import React, { useState, useRef } from "react";
 
-// Demo team member data with Twitter links
+// Team member data with organized photo structure
 const teamMembers = [
   {
     id: 1,
     name: "Gökmen",
     role: "Developer",
-    color: "/lovable-uploads/72c1a69d-8455-43e9-a47c-fda893477aa8.png",
-    gray: "/lovable-uploads/72c1a69d-8455-43e9-a47c-fda893477aa8.png",
+    photo: "/team/gokmen.jpg",
     bio: `Gökmen is a skilled developer with expertise in building scalable web applications. He has extensive experience in modern JavaScript frameworks and backend technologies, focusing on creating efficient and maintainable code solutions.`,
-    twitter: "https://x.com/gokmen"
-  },
-  {
-    id: 2,
-    name: "Burak",
-    role: "Designer",
-    color: "/lovable-uploads/a0dc4c73-baf5-4dc2-ac72-14f61457d6e7.png",
-    gray: "/lovable-uploads/a0dc4c73-baf5-4dc2-ac72-14f61457d6e7.png",
-    bio: "Burak is a creative designer who specializes in user experience and interface design. He believes great design happens when aesthetics meet functionality, creating products that are both beautiful and intuitive to use.",
-    twitter: "https://x.com/burak"
+    twitter: "https://x.com/gokmeneth"
   },
   {
     id: 3,
     name: "Sefercan",
     role: "Researcher",
-    color: "/lovable-uploads/f4f67173-22be-4437-9dbc-7e0438629339.png",
-    gray: "/lovable-uploads/f4f67173-22be-4437-9dbc-7e0438629339.png",
+    photo: "/team/sefercan.jpg",
     bio: "Sefercan is a dedicated researcher focused on exploring innovative solutions and emerging technologies. She conducts thorough analysis and provides valuable insights that drive strategic decision-making.",
     twitter: "https://x.com/sefercan"
-  },
-  {
-    id: 4,
-    name: "Maslak",
-    role: "Analyst",
-    color: "/lovable-uploads/2ad88e5f-b5d7-4982-8e32-f7291e302fa0.png",
-    gray: "/lovable-uploads/2ad88e5f-b5d7-4982-8e32-f7291e302fa0.png",
-    bio: "Maslak is a data analyst with expertise in market research and business intelligence. He transforms complex data into actionable insights, helping teams make informed decisions based on solid analytical foundations.",
-    twitter: "https://x.com/maslak"
-  },
-  {
-    id: 5,
-    name: "Akman",
-    role: "Researcher",
-    color: "/lovable-uploads/19385c49-7ec3-4eef-864a-f74857ea35ff.png",
-    gray: "/lovable-uploads/19385c49-7ec3-4eef-864a-f74857ea35ff.png",
-    bio: "Akman is a research specialist who focuses on innovation and emerging trends. He conducts comprehensive studies and provides strategic insights that help shape the future direction of projects.",
-    twitter: "https://x.com/akman"
+   
   },
   {
     id: 6,
     name: "Ercan",
     role: "Researcher",
-    color: "/lovable-uploads/bd21ad14-aaee-4203-9546-619af45e66f7.png",
-    gray: "/lovable-uploads/bd21ad14-aaee-4203-9546-619af45e66f7.png",
+    photo: "/team/ercan.jpg",
     bio: "Ercan is a research professional with a passion for exploring new technologies and methodologies. He brings analytical thinking and innovative approaches to complex research challenges.",
     twitter: "https://x.com/ercan"
+  },
+  {
+    id: 4,
+    name: "Maslak",
+    role: "Analyst",
+    photo: "/team/maslak.jpg",
+    bio: "Maslak is a data analyst with expertise in market research and business intelligence. He transforms complex data into actionable insights, helping teams make informed decisions based on solid analytical foundations.",
+    twitter: "https://x.com/maslak"
+  },
+  {
+    id: 5,
+    name: "Burak",
+    role: "Designer", 
+    photo: "/team/burak.jpg",
+    bio: "Burak is a creative designer who specializes in user experience and interface design. He believes great design happens when aesthetics meet functionality, creating products that are both beautiful and intuitive to use.",
+    twitter: "https://x.com/100guc"
+    
+  },
+  {
+    id: 2,
+    name: "Akman",
+    role: "Researcher",
+    photo: "/team/berkay.jpg",
+    bio: "Akman is a research specialist who focuses on innovation and emerging trends. He conducts comprehensive studies and provides strategic insights that help shape the future direction of projects.",
+    twitter: "https://x.com/Akmangrainz"
+    
   },
   {
     id: 7,
     name: "Ceyhun",
     role: "Business Development",
-    color: "/lovable-uploads/6eab4ca4-5fa6-4c6f-8285-a2b7464ffe95.png",
-    gray: "/lovable-uploads/6eab4ca4-5fa6-4c6f-8285-a2b7464ffe95.png",
+    photo: "/team/ceyhun.jpg",
     bio: "Ceyhun is a business development specialist who focuses on growth strategies and partnership opportunities. He has extensive experience in identifying market opportunities and building strategic relationships.",
-    twitter: "https://x.com/ceyhun"
+    twitter: "https://x.com/grainzeth"
   },
 ];
 
@@ -144,7 +140,7 @@ const TeamPhotos: React.FC = () => {
                 aria-label={member.name}
               >
                 <img
-                  src={member.color}
+                  src={member.photo}
                   alt={member.name}
                   className={`w-full h-full object-cover transition-all duration-200 ${
                     isHovered ? "grayscale-0" : "grayscale hover:grayscale-0"
@@ -178,7 +174,7 @@ const TeamPhotos: React.FC = () => {
                 aria-label={member.name}
               >
                 <img
-                  src={member.color}
+                  src={member.photo}
                   alt={member.name}
                   className={`w-full h-full object-cover transition-all duration-200 ${
                     isHovered ? "grayscale-0" : "grayscale hover:grayscale-0"
@@ -214,7 +210,7 @@ const TeamPhotos: React.FC = () => {
               aria-label={member.name}
             >
               <img
-                src={member.color}
+                src={member.photo}
                 alt={member.name}
                 className={`w-full h-full object-cover transition-all duration-200 ${
                   isHovered ? "grayscale-0" : "grayscale hover:grayscale-0"
